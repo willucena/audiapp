@@ -11,4 +11,9 @@ class Processo extends Model
     ];
 
     public $timestamps = false;
+
+    public static function findOrFail($id)
+    {
+    }
+
 }

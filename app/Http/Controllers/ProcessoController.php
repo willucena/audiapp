@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Processo;
 use Illuminate\Database\QueryException;
-use Illuminate\Http\Client\Response;
 use Illuminate\Http\Request;
 
 class ProcessoController extends Controller
