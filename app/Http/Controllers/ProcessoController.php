@@ -104,4 +104,20 @@ class ProcessoController extends Controller
         return response()->json($response);
     }
 
+    /**
+     * @param $numero
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function buscar($numero)
+    {
+        $processo = Processo::where('numero', '=', $numero)->first();
+
+        if(!$processo){
+            return null;
+        }
+
+        $data = $processo->toArray();
+        return response()->json($data);
+    }
+
 }

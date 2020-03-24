@@ -71,40 +71,43 @@
     <button type="button" class="btn btn-primary text-right" id="inserir" data-toggle="modal" data-target=".bd-example-modal-lg">Novo processo</button>
     <br>
     <br>
-    <table class="table table-striped" id="dataTable">
-        <thead>
-        <tr>
-            <th scope="col">Nº PJE</th>
-            <th scope="col">Ação</th>
-            <th scope="col">Requerente</th>
-            <th scope="col">Adv. Requerente</th>
-            <th scope="col">Requerido</th>
-            <th scope="col">Adv. Requerido</th>
-            <th scope="col">Juizª</th>
-            <th scope="col">Promotorª</th>
-            <th scope="col"></th>
-        </tr>
-        </thead>
-        <tbody>
-        @foreach($processos as $processo)
-        <tr>
-            <th>{{ $processo->numero }}</th>
-            <td>{{ $processo->acao }}</td>
-            <td>{{ $processo->requerente }}</td>
-            <td>{{ $processo->adv_requerente }}</td>
-            <td>{{ $processo->requerido }}</td>
-            <td>{{ $processo->adv_requerido }}</td>
-            <td>{{ $processo->juiz }}</td>
-            <td>{{ $processo->promotor }}</td>
-            <td>
-                <button type="button" data-id="{{$processo->id}}" class="btn btn-success btn-sm editar">Editar</button>
-                <button type="button" data-id="{{$processo->id}}" class="btn btn-danger btn-sm remover">Excluir</button>
-            </td>
-        </tr>
-        @endforeach
-        </tbody>
-    </table>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <div>
+        <table class="table table-sm table-striped " id="dataTable">
+            <thead>
+            <tr>
+                <th scope="col">Nº PJE</th>
+                <th scope="col">Ação</th>
+                <th scope="col">Requerente</th>
+                <th scope="col">Adv. Requerente</th>
+                <th scope="col">Requerido</th>
+                <th scope="col">Adv. Requerido</th>
+                <th scope="col">Juizª</th>
+                <th scope="col">Promotorª</th>
+                <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody>
+            @foreach($processos as $processo)
+                <tr>
+                    <th>{{ $processo->numero }}</th>
+                    <td>{{ $processo->acao }}</td>
+                    <td>{{ $processo->requerente }}</td>
+                    <td>{{ $processo->adv_requerente }}</td>
+                    <td>{{ $processo->requerido }}</td>
+                    <td>{{ $processo->adv_requerido }}</td>
+                    <td>{{ $processo->juiz }}</td>
+                    <td>{{ $processo->promotor }}</td>
+                    <td>
+                        <button type="button" data-id="{{$processo->id}}" class="btn btn-success btn-sm editar">Editar</button>
+                        <button type="button" data-id="{{$processo->id}}" class="btn btn-danger btn-sm remover">Excluir</button>
+                    </td>
+                </tr>
+            @endforeach
+            </tbody>
+        </table>
+    </div>
+
+    <script src="{{asset('js/jquery.min.js')}}" ></script>
     <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"></script>
 
     <script>
